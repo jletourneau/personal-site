@@ -47,5 +47,6 @@ configure :build do
 
   activate :minify_html do |html|
     html.remove_input_attributes = false
+    html.remove_intertag_spaces = true
   end
 end
