@@ -5,7 +5,8 @@
     %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=edge,chrome=1' }
     %meta{ name: 'viewport', content: 'width=device-width,initial-scale=1' }
     %title= current_page.data.title
-    %link{ rel: 'stylesheet', href: asset_path(:css, 'all') }
+    -# %link{ rel: 'stylesheet', href: asset_path(:css, 'all') }
+    = inline_stylesheet 'all'
   %body{ class: page_classes }
     %header
       = partial (current_page.data.header || 'header')

@@ -15,7 +15,27 @@ compass_config do |config|
   config.output_style = :nested
 end
 
+helpers do
+  def inline_stylesheet(name)
+    content_tag :style do
+      sprockets["#{name}.css"].to_s
+    end
+  end
+
+  def inline_javascript(name)
+    content_tag :script do
+      sprockets["#{name}.js"].to_s
+    end
+  end
+end
+
 configure :build do
+
+  compass_config do |config|
+    config.output_style = :compressed
+    config.line_comments = false
+  end
+
   ignore 'templates/layouts/*'
   ignore 'templates/partials/*'
 
