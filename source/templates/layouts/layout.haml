@@ -14,4 +14,5 @@
       = yield
     %footer
       = partial (current_page.data.footer || 'footer')
-    -# %script{ src: asset_path(:js, 'all'), async: true }
+    %script{ src: asset_path(:js, 'all') }
+    %script loadCSS("#{asset_path(:css, 'icons')}")
