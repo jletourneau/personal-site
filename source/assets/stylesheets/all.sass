@@ -2,7 +2,6 @@
 
 @import 'settings'
 @import 'compass'
-@import 'susy'
 
 *
   +box-sizing(border-box)
@@ -12,19 +11,19 @@ body, html
   padding: 0
 
 body
-  font-family: 'Helvetica Neue', Helvetica, sans-serif
-  display: flex
-  min-height: 100vh
-  flex-direction: column
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 header
   background: #ddd
-
-main
-  flex: 1
+  padding: 1rem 0
 
 .container
-  +container()
+  max-width: 62.5em
+  margin: 0 auto
+  padding: 0 1rem
+
+h1
+  margin: 0
 
 ul
   margin: 1rem 0
