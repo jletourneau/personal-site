@@ -2,7 +2,7 @@
 
 @import 'settings'
 @import 'compass'
-@import 'foundation/scss/foundation'
+@import 'susy'
 
 *
   +box-sizing(border-box)
@@ -17,23 +17,14 @@ body
   min-height: 100vh
   flex-direction: column
 
-header, .flexbox footer
+header
   background: #ddd
 
 main
   flex: 1
 
 .container
-  +grid-row()
-  padding:
-    left: $column-gutter / 2
-    right: $column-gutter / 2
-
-.row
-  +grid-row()
-
-.col
-  +grid-column()
+  +container()
 
 ul
   margin: 1rem 0
