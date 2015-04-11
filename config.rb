@@ -18,13 +18,13 @@ end
 helpers do
   def inline_stylesheet(name)
     content_tag :style do
-      sprockets["#{name}.css"].to_s
+      sprockets["#{name}.css"].to_s.strip
     end
   end
 
   def inline_javascript(name)
     content_tag :script do
-      sprockets["#{name}.js"].to_s
+      sprockets["#{name}.js"].to_s.strip
     end
   end
 end
