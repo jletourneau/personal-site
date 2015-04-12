@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'icomoon';
+  font-family: icomoon;
   src: font-url('icomoon.eot?-mssf7j');
   src: font-url('icomoon.eot?#iefix-mssf7j') format('embedded-opentype'),
        font-url('icomoon.woff?-mssf7j') format('woff'),
@@ -10,13 +10,14 @@
 }
 
 i.i {
-  font-family: 'icomoon';
+  font: normal normal normal 100%/1 icomoon;
+  // font-family: 'icomoon';
   speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
+  // font-style: normal;
+  // font-weight: normal;
+  // font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  // line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

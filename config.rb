@@ -36,6 +36,17 @@ configure :build do
     config.line_comments = false
   end
 
+  helpers do
+    def inline_javascript(name)
+      require 'uglifier'
+      content_tag :script do
+        Uglifier.compile(
+          sprockets["#{name}.js"].to_s.strip
+        )
+      end
+    end
+  end
+
   ignore 'templates/layouts/*'
   ignore 'templates/partials/*'
 
