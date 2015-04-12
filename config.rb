@@ -31,6 +31,12 @@ end
 
 configure :build do
 
+  # Monkeypatch middleman-core/lib/middleman-core/sitemap.rb to allow Netlify's
+  # magic files to be copied into the build directory.
+  config[:ignored_sitemap_matchers][:partials] = proc do |file|
+    file =~ %r{/_[^_]} && file !~ %r{/_(headers|redirects)}
+  end
+
   compass_config do |config|
     config.output_style = :compressed
     config.line_comments = false
