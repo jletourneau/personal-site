@@ -26,11 +26,21 @@ h1
   margin: 0
   font-size: 1.75rem
 
+a
+  text-decoration: none
+  color: $link-color
+  &:hover
+    color: mix($link-color, black, 50%)
+
 .accounts
   font-size: 1.25rem
   margin: 1rem 0
   padding: 0
   list-style-type: none
   line-height: 1.75
-  a
-    text-decoration: none
+
+i.icon
+  display: inline-block
+  width: 2rem
+  text-align: center
+  vertical-align: text-top
