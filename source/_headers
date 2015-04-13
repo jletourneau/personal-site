@@ -1,4 +1,6 @@
 /*
   Cache-Control: max-age=86400
+/favicon.ico
+  Cache-Control: max-age=31536000
 /assets/*
   Cache-Control: max-age=31536000
