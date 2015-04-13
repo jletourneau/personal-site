@@ -1,3 +1,4 @@
 /*
   Cache-Control: max-age=86400
-  X-Frame-Options: DENY
+/assets/*
+  Cache-Control: max-age=31536000
