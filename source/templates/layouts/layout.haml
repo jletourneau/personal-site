@@ -5,6 +5,8 @@
     %meta{ name: 'viewport', content: 'width=device-width,initial-scale=1' }
     %title= current_page.data.title
     = inline_stylesheet 'abovefold'
+    %noscript
+      %link{ rel: 'stylesheet', href: asset_path(:css, 'deferred') }
   %body{ class: page_classes }
     %header
       = partial (current_page.data.header || 'header')
