@@ -5,7 +5,7 @@ window.loadCSS = (file) ->
     link.rel = 'stylesheet'
     link.href = file
     head = document.getElementsByTagName('head')[0]
-    head.parentNode.insertBefore(link, head)
+    head.appendChild(link)
 
   animation_frame = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame
 
