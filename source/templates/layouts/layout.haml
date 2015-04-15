@@ -7,7 +7,7 @@
     = inline_stylesheet 'abovefold'
     %noscript
       %link{ rel: 'stylesheet', href: asset_path(:css, 'deferred') }
-    %link{ rel: 'icon', href: 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' }
+    %link{ rel: 'shortcut icon', href: image_path('favicon.gif') }
   %body{ class: page_classes }
     %header
       = partial (current_page.data.header || 'header')
