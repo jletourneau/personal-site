@@ -19,6 +19,7 @@ helpers do
   def inline_stylesheet(name)
     content_tag :style do
       sprockets["#{name}.css"].to_s.strip
+        .gsub("\xEF\xBB\xBF".force_encoding('UTF-8'), '')
     end
   end
 
