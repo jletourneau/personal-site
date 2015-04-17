@@ -13,7 +13,5 @@
       = partial (current_page.data.header || 'header')
     %main
       = yield
-    %footer
-      = partial (current_page.data.footer || 'footer')
     = inline_javascript 'all'
     %script loadCSS("#{asset_path(:css, 'deferred')}")
