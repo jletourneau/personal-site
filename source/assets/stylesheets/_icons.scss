@@ -16,6 +16,9 @@ i[class^="i-"] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+i[class^="i-"]:after {
+  content: "";
+}
 
 .i-mail:before {
   content: "\e600";
