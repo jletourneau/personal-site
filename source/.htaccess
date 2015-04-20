@@ -1,0 +1,22 @@
+AddDefaultCharset      utf-8
+AddType                image/x-icon .ico
+AddOutputFilterByType  DEFLATE text/css text/html
+ErrorDocument          404 /404.html
+
+Header add X-UA-Compatible "IE=edge"
+
+ExpiresActive On
+ExpiresDefault "access plus 1 day"
+
+# Eliminate some confusion with j-let.org...
+RedirectMatch seeother ~honbu http://www.j-let.org/
+RedirectMatch seeother ~wcf   http://www.j-let.org/
+
+Redirect 301 /misc/poseidon.php http://jlet.org/poseidon.html
+
+# Seeing a fair number of requests with a Java user agent that pull the home
+# page but no CSS or other collateral. Suspect it's a bot or scraper: ban.
+SetEnvIf User-Agent "^Java/"   badAgent
+SetEnvIf User-Agent "Tailrank" badAgent
+SetEnvIf User-Agent "Spinn3r"  badAgent
+Deny from env=badAgent
