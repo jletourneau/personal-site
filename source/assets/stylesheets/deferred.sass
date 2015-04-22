@@ -1,6 +1,7 @@
 @charset 'utf-8'
 
 @import 'settings'
+@import 'compass'
 @import '_icons'
 
 a:visited
@@ -9,3 +10,11 @@ a:hover
   color: mix($link-color, black, 50%)
 a:active
   color: mix($link-color, white, 50%)
+
+h1
+  &:before
+    +background-size(contain)
+    background:
+      color: transparent
+      image: image_url('monogram.svg')
+      repeat: no-repeat
