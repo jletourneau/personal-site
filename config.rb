@@ -48,7 +48,8 @@ configure :build do
       require 'uglifier'
       content_tag :script do
         Uglifier.compile(
-          sprockets["#{name}.js"].to_s.strip
+          sprockets["#{name}.js"].to_s.strip,
+          output: { comments: :none }
         )
       end
     end
