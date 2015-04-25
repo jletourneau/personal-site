@@ -7,12 +7,14 @@
   +box-sizing(border-box)
 
 html
-  font-size: 3vh
+  font:
+    size: 3vh
+    family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  line-height: 1.25
 
 body
   margin: 0
   padding: 0
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 header
   background: #ddd
@@ -24,6 +26,8 @@ header
   max-width: 20em
   margin: 0 auto
   padding: 0 1rem
+  .poseidon &
+    max-width: 40em
 
 h1
   margin: 0
