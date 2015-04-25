@@ -16,10 +16,15 @@ compass_config do |config|
 end
 
 helpers do
+  def strip_byte_order_mark(str)
+    str.sub("\xEF\xBB\xBF".force_encoding('UTF-8'), '')
+  end
+
   def inline_stylesheet(name)
     content_tag :style do
-      sprockets["#{name}.css"].to_s.strip
-        .gsub("\xEF\xBB\xBF".force_encoding('UTF-8'), '')
+      strip_byte_order_mark(
+        sprockets["#{name}.css"].to_s.strip
+      )
     end
   end
 
