@@ -3,5 +3,6 @@
   "version": "0.0.0",
   "private": "true",
   "dependencies": {
+    "bower-webfontloader": "1.5.16"
   }
 }

@@ -4,7 +4,8 @@
     %meta{ charset: 'utf-8' }
     %meta{ name: 'viewport', content: 'width=device-width,initial-scale=1' }
     %title= current_page.data.title
-    = inline_stylesheet 'abovefold'
+    %style
+      = inline_stylesheet 'abovefold'
     %noscript
       %link{ rel: 'stylesheet', href: asset_path(:css, 'deferred') }
     %link{ rel: 'shortcut icon', href: image_path('favicon.gif') }
@@ -13,5 +14,7 @@
       = partial (current_page.data.header || 'header')
     %main
       = yield
-    = inline_javascript 'all'
-    %script loadCSS("#{asset_path(:css, 'deferred')}")
+    %script
+      = inline_javascript 'inline'
+      loadCSS("#{asset_path(:css, 'deferred')}")
+    = javascript_include_tag 'deferred', async: true

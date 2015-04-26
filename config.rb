@@ -21,17 +21,13 @@ helpers do
   end
 
   def inline_stylesheet(name)
-    content_tag :style do
-      strip_byte_order_mark(
-        sprockets["#{name}.css"].to_s.strip
-      )
-    end
+    strip_byte_order_mark(
+      sprockets["#{name}.css"].to_s.strip
+    )
   end
 
   def inline_javascript(name)
-    content_tag :script do
-      sprockets["#{name}.js"].to_s.strip
-    end
+    sprockets["#{name}.js"].to_s.strip
   end
 end
 
@@ -51,12 +47,10 @@ configure :build do
   helpers do
     def inline_javascript(name)
       require 'uglifier'
-      content_tag :script do
-        Uglifier.compile(
-          sprockets["#{name}.js"].to_s.strip,
-          output: { comments: :none }
-        )
-      end
+      Uglifier.compile(
+        sprockets["#{name}.js"].to_s.strip,
+        output: { comments: :none }
+      )
     end
   end
 
