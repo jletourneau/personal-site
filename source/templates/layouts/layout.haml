@@ -16,5 +16,5 @@
       = yield
     %script
       = inline_javascript 'inline'
-      loadCSS("#{asset_path(:css, 'deferred')}")
-    = javascript_include_tag 'deferred', async: true
+      loadCSS("#{asset_path(:css, 'deferred')}");
+    %script{ src: asset_path(:js, 'deferred'), async: true }
