@@ -1,6 +1,6 @@
 AddDefaultCharset      utf-8
 AddType                image/x-icon .ico
-AddOutputFilterByType  DEFLATE text/css text/html application/javascript
+AddOutputFilterByType  DEFLATE text/css text/html application/javascript image/svg+xml
 ErrorDocument          404 /404.html
 
 Header add X-UA-Compatible "IE=edge"
