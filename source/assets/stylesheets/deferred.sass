@@ -20,3 +20,12 @@ a:active
   font-family: Martel, sans-serif
   header
     padding: 1.1rem 0 0.9rem
+
+.photo
+  +background-size(cover)
+  background:
+    image: image_url('jack@1x.jpg')
+    position: 50% 50%
+    repeat: no-repeat
+  @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx)
+    background-image: image_url('jack@2x.jpg')
