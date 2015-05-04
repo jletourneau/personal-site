@@ -1,5 +1,5 @@
 window.WebFontConfig = {
   google: {
-    families: ['Martel:400,800:latin']
+    families: ['Merriweather:400,700:latin']
   }
 };
