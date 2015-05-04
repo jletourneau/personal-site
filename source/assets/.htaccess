@@ -1,1 +1,2 @@
 ExpiresDefault "access plus 1 year"
+Header append Cache-Control "public"
