@@ -1,13 +1,10 @@
-@font-face {
-  font-family: icomoon;
-  src: font-url('icomoon.eot');
-  src: font-url('icomoon.eot?#iefix') format('embedded-opentype'),
-       font-url('icomoon.woff') format('woff'),
-       font-url('icomoon.ttf') format('truetype'),
-       font-url('icomoon.svg#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+// WOFF by itself is very widely supported. http://caniuse.com/#feat=woff
+@include font-face(
+  icomoon,
+  inline-font-files('_icomoon.woff', woff),
+  $weight: normal,
+  $style: normal
+);
 
 i[class^="i-"] {
   font: normal normal normal 100%/1 icomoon;
