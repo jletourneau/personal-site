@@ -63,6 +63,14 @@ configure :build do
   activate :minify_javascript
   activate :asset_hash
 
+  # Only use asset host if environment variable is set (see Rakefile task).
+  # Since this CloudFront distribution is pointed to Eris, we don't want to
+  # use it when Netlify runs a plain vanilla "middleman build".
+  if ENV['CLOUDFRONT']
+    activate :asset_host
+    set :asset_host, '//d1msbq6ewzmie1.cloudfront.net'
+  end
+
   activate :minify_html do |html|
     html.remove_input_attributes = false
     html.remove_intertag_spaces = true
