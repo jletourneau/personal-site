@@ -20,6 +20,7 @@ RedirectMatch seeother ~honbu http://www.j-let.org/
 RedirectMatch seeother ~wcf   http://www.j-let.org/
 
 Redirect 301 /misc/poseidon.php http://jlet.org/poseidon.html
+Redirect 410 /misc/ear_protection.pdf
 
 # Seeing a fair number of requests with a Java user agent that pull the home
 # page but no CSS or other collateral. Suspect it's a bot or scraper: ban.
