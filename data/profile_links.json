@@ -1,0 +1,14 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Jack Letourneau",
+  "url": "http://jlet.org/",
+  "sameAs": [
+    "https://github.com/jletourneau",
+    "https://twitter.com/jlet",
+    "https://www.facebook.com/jack.letourneau",
+    "https://www.flickr.com/photos/letouj",
+    "https://www.linkedin.com/in/letouj",
+    "https://plus.google.com/+JackLetourneau"
+  ]
+}
