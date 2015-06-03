@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/jlet
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://jlet.org
+  * I am jlet (https://keybase.io/jlet) on keybase.
+  * I have a public key with fingerprint 9FAD 0D99 121D 88A1 1E1A  6B3A D578 450A BC45 4EF4
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.9"
+        },
+        "key": {
+            "fingerprint": "9fad0d99121d88a11e1a6b3ad578450abc454ef4",
+            "host": "keybase.io",
+            "key_id": "D578450ABC454EF4",
+            "uid": "bb2fba224276695e854ce270fdb55819",
+            "username": "jlet"
+        },
+        "merkle_root": {
+            "ctime": 1433340884,
+            "hash": "3316d1c5d20829d1c785616a02aca9fa41935686f41ed4b6ce3efc649f99d6eb90db23fc023e1687a0db760dc6c8dbed8473821e360128637fb30ef64dc00b3f",
+            "seqno": 238285
+        },
+        "service": {
+            "hostname": "jlet.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1433340979,
+    "expire_in": 157680000,
+    "prev": "81e96aa2d0480eb3ea2646a4f266964a4fdf0ca89f38c0179bee9d575fe65e23",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owFVkntMFEccx48DQQkIiEAaRPGw1Sb0nH3NzpIaBYWiSZXY1khqvO5jFhaO22Pv
+ODgQ1KIGFSq+eja1mD4QpRIhVVMs1ER8FZS0oCXBKGptKk0NlJeg1HaX0lTnr9/M
+fH7f3+87v6kO9TeZ/W4VpQa3pK4d8evoF0zvqSFUiUVQJa8lqcQi2hXscBuRg8/D
+liRLLvYKvAtbFTXeoUrYmuOKn2YSLR6suRTVoVPAylo5S2migRvJsuLIwppTUwwt
+CyfzEpA4jiAJCSGeIDDBQ4HiJYZFNAN4QaQZGsu0LpmtutwvVbVMadoUST9d9S+f
+nLJS51PTDL5g6kIQSFngSZImWQg5BiOGFjHJAlkSGAYRnAG6sDZtKceO3UaveVjL
+tWObpqpThkW3YlwTNEVRNECI1rvhXdl6AkURUCJERiIBIjk9YhEDCcgDkhd53RxN
+cBQDEZRpAku0AEVMYVmENCdznASxwAFJIClZBCSFCYhYXt+zEEgiFJEkYAnRLIVI
+AlMQECSCFCsLFMAypCURAIGS9fZdON+hWpJInUNMqbHXPIqIjb6NJ3vBmVXVsvQE
+p6a6VVG166fZbrczyTDs9joNqhALtul8W62gOCR9WC9Ok9DRlx+DY7lECy5yKhq2
+KQbBsBABfRl1sEfXRATmIM+TEqARwAKFeRLSkKdlUh8IpPVAkoHII06mkAgIlhMw
+5vT5MzKGDCap/y1Sep98li7pUrIcvLtAw5bS3eZ5ASY/sylwhtn4rqbgWeH//eHy
+yrC/Cwvagp6X7GmsWZHAxYyPfFvT7TgUeSB8X2bI7Xtl7Yu23qnZtHqHfVPfp60w
+bH5Mc2/t5i7Q4vzjKUoamam1T9zOg/2P15AtHfOuhY1ezNQW0xPbezrL5gfWrkdt
+K7Maxr5YPXzt+sQHcwdOHXN9duz8soCEnpnDV0rF8slzoWnD0vH6RXOIobj+vWKC
+34X73GG7WPz9509+L8dxQabY8ehOLePPiqU/Vj8dfFi8kNq1InlvVeSdUVPXh6uF
+/fm9a3Dw2eeL/d46OL6nqXK/2XzU2vt1nej5+Pl2LvbExj1tUowjqiDCW62FvD6Q
+lwImV40+61xwF1TNjh5KO3Exfp3y1dXulIq64sB3W+rXt409ikhwRLcHN3TVnMyt
+eDyj6kbGkd4n+b4vfR7/iEu+xX+d2TF4vDX6XOXpqPRHOb6mta2vvfLD+YvNc2cN
+1rbWe58V1iV7Kj9528sNtcs3PRsf3ruunfE2+O7e9w91OW8F2q6YfXmdsHt3Ru+h
+Re9PPti5rYf7ZYma8OpvVMdPl06oN38ubP3mtJK64eSk1dv00ZEEES2pam+WvruQ
+usFR1Hg1LuPUOx1xhwsqD+y0xz6IHOu/vLxl6cE+UHc20bwwdksEuKI1ziYXkCWB
+WS1bfL7l24LkOb+G73rzDTYMLJvsK4vqPrpuYB+TfnnDjW5bb0Q62rw1IFMk/gE=
+=AZ+w
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jlet
+
+==================================================================
