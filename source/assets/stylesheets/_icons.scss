@@ -1,7 +1,7 @@
 // WOFF by itself is very widely supported. http://caniuse.com/#feat=woff
 @include font-face(
   icomoon,
-  inline-font-files('_icomoon.woff', woff),
+  inline-font-files('icomoon/_icomoon.woff', woff),
   $weight: normal,
   $style: normal
 );

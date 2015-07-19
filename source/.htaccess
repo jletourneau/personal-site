@@ -1,6 +1,7 @@
 AddDefaultCharset      utf-8
 AddType                image/x-icon .ico
 AddType                application/x-font-ttf .ttf
+AddType                application/font-woff .woff
 ErrorDocument          404 /404.html
 
 AddOutputFilterByType DEFLATE \
@@ -8,6 +9,7 @@ AddOutputFilterByType DEFLATE \
   text/html \
   application/javascript \
   application/x-font-ttf \
+  application/font-woff \
   image/svg+xml
 
 Header add X-UA-Compatible "IE=edge"

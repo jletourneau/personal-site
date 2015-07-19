@@ -1,2 +1,3 @@
 ExpiresDefault "access plus 1 year"
 Header append Cache-Control "public"
+Header add Access-Control-Allow-Origin "*"

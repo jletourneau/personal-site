@@ -1,5 +1,5 @@
 window.WebFontConfig = {
-  google: {
-    families: ['Merriweather:400,700:latin']
+  custom: {
+    families: ['Merriweather:n4,n7']
   }
 };
