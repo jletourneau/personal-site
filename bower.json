@@ -3,6 +3,5 @@
   "version": "0.0.0",
   "private": "true",
   "dependencies": {
-    "webfontloader": "https://github.com/typekit/webfontloader.git#1.6.4"
   }
 }
