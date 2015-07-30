@@ -1,4 +1,4 @@
-window.loadCSS = (file) ->
+loadCSS = (file) ->
 
   callback = () ->
     link = document.createElement('link')
@@ -8,13 +8,15 @@ window.loadCSS = (file) ->
     head.appendChild(link)
 
   animation_frame = (
-    requestAnimationFrame ||
-    mozRequestAnimationFrame ||
-    webkitRequestAnimationFrame ||
-    msRequestAnimationFrame
+    this.requestAnimationFrame ||
+    this.mozRequestAnimationFrame ||
+    this.webkitRequestAnimationFrame ||
+    this.msRequestAnimationFrame
   )
 
   if animation_frame
     animation_frame(callback)
   else
     window.addEventListener('load', callback)
+
+loadCSS("<%= asset_path(:css, 'deferred') %>")
