@@ -81,6 +81,7 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :rsync
+  deploy.flags = '-cprvz'
   deploy.build_before = true
   deploy.user = 'jack'
   deploy.host = 'eris.discordians.net'
