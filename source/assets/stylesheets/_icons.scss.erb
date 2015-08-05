@@ -1,0 +1,22 @@
+<% icon_build_dir = '../../../assets/jlet-iconfont/build' %>
+
+// WOFF by itself is very widely supported. http://caniuse.com/#feat=woff
+@include font-face(
+  jlet,
+  inline-font-files("<%= icon_build_dir %>/jlet.woff", woff),
+  $weight: normal,
+  $style: normal
+);
+
+span[class^="i-"] {
+  font: normal normal normal 100%/1 jlet;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &:after {
+    content: "";
+  }
+}
+
+@import "<%= icon_build_dir %>/codepoints";

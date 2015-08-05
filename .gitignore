@@ -3,3 +3,8 @@
 .ruby-version
 /build
 /bower_components
+
+/assets/*/.fontcustom-manifest.json
+/assets/*/build/*.eot
+/assets/*/build/*.svg
+/assets/*/build/*.ttf
