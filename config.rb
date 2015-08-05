@@ -83,11 +83,19 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :rsync
-  deploy.flags = '-cprvz'
+  deploy.flags = %w(
+    --checksum
+    --compress
+    --delay-updates
+    --delete
+    --delete-after
+    --perms
+    --recursive
+    --verbose
+  ).join(' ')
   deploy.build_before = true
   deploy.user = 'jack'
   deploy.host = 'eris.discordians.net'
   deploy.port = 22
   deploy.path = '/web/jlet.org/public_html'
-  deploy.clean = true
 end
