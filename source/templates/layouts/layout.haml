@@ -5,7 +5,7 @@
     %meta{ name: 'viewport', content: 'width=device-width,initial-scale=1' }
     %title= current_page.data.title
     %style= inline_stylesheet '_abovefold'
-    %noscript
+    %noscript#deferred_css
       %link{ rel: 'stylesheet', href: asset_path(:css, 'deferred') }
     %link{ rel: 'shortcut icon', href: image_path('favicon.gif') }
   %body{ class: page_classes }
