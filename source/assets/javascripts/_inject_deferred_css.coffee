@@ -3,8 +3,7 @@ document.documentElement.className = ''
 
 callback = () ->
   deferred_css = document.getElementById('deferred_css')
-  head = document.getElementsByTagName('head')[0]
-  head.insertAdjacentHTML('beforeend', deferred_css.innerText)
+  deferred_css.insertAdjacentHTML('afterend', deferred_css.innerText)
 
 animation_frame = (
   this.requestAnimationFrame ||
