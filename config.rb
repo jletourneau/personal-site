@@ -16,6 +16,9 @@ set :partials_dir, 'templates/partials'
 
 compass_config do |config|
   config.output_style = :nested
+  # Temporarily disabling warnings to suppress "interpolation near operators"
+  # noise from _deprecated-support.scss. Recheck when Compass is upgraded.
+  config.disable_warnings = true
 end
 
 helpers do
