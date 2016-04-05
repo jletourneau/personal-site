@@ -1,2 +1,7 @@
-.container
-  %h1= current_page.data.title
+%header
+  .container
+    - if page_classes != 'index'
+      %nav{ role: 'navigation' }
+        %ul
+          %li= link_to 'Home', '/index.html'
+    %h1= current_page.data.title

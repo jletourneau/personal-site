@@ -10,23 +10,58 @@ a:hover
 a:active
   color: mix($link-color, white, 50%)
 
-p
-  +hyphens(auto)
+.photo
+  background:
+    image: image_url('jack@1x.jpg')
+    position: 50% 50%
+    repeat: no-repeat
+    size: cover
+  @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
+    background-image: image_url('jack@2x.jpg')
 
-.no-js, .wf-merriweather-n4-active
-  font-family: Merriweather, sans-serif
-  header
-    padding: 1.1em 0 0.9em
+.question
+  cursor: pointer
+
+.answer
+  margin-top: 0.5rem
+  font-weight: bold
+  &.show
+    display: block
+    &.inline
+      display: inline
+      margin-left: 0.5rem
+  ul + small
+    display: block
+    margin-top: 0.5rem
+
+.favicons
+  img
+    vertical-align: -50%
+
+.no-js
+  .question
+    cursor: auto
+  .answer
+    display: block
+    &.inline
+      display: inline
 
 @media print
+  .noprint, nav, footer, .js-only
+    display: none
   .pagebreak
     border: 0
     page-break-after: always
-  a:after
+  .accounts
+    a:after
+      display: block
+      content: attr(href)
+      font-size: 0.8rem
+      line-height: 1
+      margin: 0 0 0.5rem 1.9rem
+  .question
+    cursor: auto
+  .answer
     display: block
-    content: attr(href)
-    font-size: 0.8rem
-    line-height: 1
-    margin: 0 0 0.5rem 1.9rem
-  .hello
-    display: none
+    &.inline
+      display: inline

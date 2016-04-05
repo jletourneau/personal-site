@@ -14,6 +14,8 @@ end
 set :layouts_dir,  'templates/layouts'
 set :partials_dir, 'templates/partials'
 
+page 'trivia/*', layout: :trivia
+
 compass_config do |config|
   config.output_style = :nested
   # Temporarily disabling warnings to suppress "interpolation near operators"
@@ -34,6 +36,15 @@ helpers do
 
   def inline_javascript(name)
     sprockets["#{name}.js"].to_s.strip
+  end
+
+  def abovefold_styles(page_classes)
+    styles = []
+    styles << inline_stylesheet('_abovefold')
+    page_classes.split.each do |page|
+      styles << inline_stylesheet("_abovefold_#{page}")
+    end
+    styles.compact.join('')
   end
 end
 
@@ -83,7 +94,7 @@ configure :build do
 
   activate :minify_html do |html|
     html.remove_input_attributes = false
-    html.remove_intertag_spaces = true
+    html.remove_intertag_spaces = false
   end
 end
 

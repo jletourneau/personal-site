@@ -1,0 +1,14 @@
+= wrap_layout :layout do
+
+  = partial 'trivia_header'
+
+  %main.container
+    %p.js-only Click each question to reveal the correct answer.
+    = yield
+
+  - content_for :footer do
+    %footer.container
+      %h2
+        ←
+        = link_to 'Bacchus trivia', '/trivia/index.html'
+    %script{ src: asset_path(:js, 'trivia'), async: true }

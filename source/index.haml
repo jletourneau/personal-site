@@ -2,8 +2,10 @@
 title: Jack Letourneau
 ---
 
-.container
-  .hello
+= partial 'header'
+
+%main.container
+  .hello.noprint
     .photo
     %p Hello.
   %ul.accounts
@@ -32,3 +34,11 @@ title: Jack Letourneau
       %span.i.i-mail<
         Gmail:
         %strong letouj
+  .noprint
+    %hr
+    %h2
+      = link_to '/trivia/index.html' do
+        Bacchus trivia
+    %p
+      Archive of trivia nights I’ve written and hosted at
+      #{link_to 'Bacchus Wood-Fired', 'https://www.facebook.com/Bacchus-Wood-Fired-145184168850725/'}.
