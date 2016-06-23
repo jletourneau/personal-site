@@ -2,15 +2,6 @@ set :css_dir,    'assets/stylesheets'
 set :js_dir,     'assets/javascripts'
 set :images_dir, 'assets/images'
 set :fonts_dir,  'assets/fonts'
-
-after_configuration do
-  bower_rc = IO.read(File.join(root, '.bowerrc')) rescue nil
-  bower_cfg = JSON.parse(bower_rc) rescue {}
-  if (bower_dir = bower_cfg.fetch('directory', nil))
-    sprockets.append_path(File.join(root, bower_dir))
-  end
-end
-
 set :layouts_dir,  'templates/layouts'
 set :partials_dir, 'templates/partials'
 

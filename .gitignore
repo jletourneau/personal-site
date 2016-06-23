@@ -2,7 +2,6 @@
 .ruby-gemset
 .ruby-version
 /build
-/bower_components
 
 /assets/*/.fontcustom-manifest.json
 /assets/*/build/*.eot
