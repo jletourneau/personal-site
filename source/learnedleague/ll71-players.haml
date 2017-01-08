@@ -1,0 +1,15 @@
+---
+title: Player QPct for LL71
+---
+
+.plotly-fullscreen{ id: 'plot_div' }
+  %span Loading…
+.back-fullscreen
+  = link_to '← Back', '/learnedleague/'
+
+- content_for :footer do
+  %script{ src: 'https://raw.githubusercontent.com/w3core/import.js/master/import.min.js' }
+  :coffeescript
+    $import(
+      'https://cdn.plot.ly/plotly-latest.min.js',
+      () -> $import('#{asset_path(:js, "learnedleague/ll71-players")}'))
