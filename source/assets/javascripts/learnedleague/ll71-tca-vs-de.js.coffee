@@ -101,6 +101,12 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
     hovermode: 'closest'
     boxmode: 'group'
     boxgap: 0.1
+    showlegend: false
+    margin:
+      t: 80
+      b: 80
+      l: 40
+      r: 0
 
     # yaxis1: box plots
     yaxis1:
@@ -120,7 +126,7 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
 
     # yaxis2: scatter plots
     yaxis2:
-      title: config.y_label
+      title: "#{config.y_label} (all levels)"
       domain: [0, 1]
       range: [0, 150]
       hoverformat: '.0f'
