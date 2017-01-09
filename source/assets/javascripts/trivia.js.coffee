@@ -1,4 +1,4 @@
-#= require _zepto
+#= require vendor/zepto
 
 $(document).on 'click', '.question', ->
   $(this)

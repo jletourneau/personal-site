@@ -8,7 +8,7 @@ title: Total correct answers vs. defensive efficiency by level, LL71
   = link_to '← Back', '/learnedleague/'
 
 - content_for :footer do
-  %script{ src: 'https://raw.githubusercontent.com/w3core/import.js/master/import.min.js' }
+  %script{ src: asset_path(:js, 'vendor/import') }
   :coffeescript
     $import(
       'https://cdn.plot.ly/plotly-latest.min.js',
