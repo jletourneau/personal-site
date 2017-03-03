@@ -69,11 +69,15 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
       range: [0.25, 0.825]
       dtick: 0.1
       tickformat: '.3f'
+      gridcolor: 'rgba(0, 0, 0, 0.1)'
+      zerolinecolor: 'rgba(0, 0, 0, 0.1)'
     yaxis:
       title: 'Win percentage'
-      range: [0.0, 1.01]
+      range: [-0.02, 1.02]
       dtick: 0.25
       tickformat: '.0%'
+      gridcolor: 'rgba(0, 0, 0, 0.1)'
+      zerolinecolor: 'rgba(0, 0, 0, 0.1)'
 
   options = {}
   document.getElementById('plot_div').innerHTML = ''
