@@ -49,7 +49,7 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
             <br>
             #{formatted_exp_pts} avg. match points
             <br>
-            (#{row['W']} W, #{row['T']} T in #{row['Matches']} matches)"
+            (#{row['W']} W, #{row['T']} T, #{row['L']} L in #{row['Matches']} matches)"
       marker:
         opacity: 0.6
         sizemode: 'area'
@@ -63,17 +63,23 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
     paper_bgcolor: 'rgba(0, 0, 0, 0)'
     plot_bgcolor: 'rgba(0, 0, 0, 0)'
     hovermode: 'closest'
+    margin:
+      t: 75
+      b: 75
+      l: 75
+      r: 75
     xaxis:
       title: 'Opponent QPct'
       range: [-0.02, 1.02]
       dtick: 0.1
+      dtick: 1 / 10
       tickformat: '.3f'
       gridcolor: 'rgba(0, 0, 0, 0.1)'
       zerolinecolor: 'rgba(0, 0, 0, 0.1)'
     yaxis:
-      title: 'Average match points: (2·Wins + 1·Ties) / Matches'
+      title: 'Avg. match points'
       range: [-0.02, 2.02]
-      dtick: 0.25
+      dtick: 1 / 4
       tickformat: '.2f'
       gridcolor: 'rgba(0, 0, 0, 0.1)'
       zerolinecolor: 'rgba(0, 0, 0, 0.1)'
