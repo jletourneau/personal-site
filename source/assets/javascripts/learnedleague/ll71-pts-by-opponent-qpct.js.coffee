@@ -30,6 +30,9 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
   exp_pts_formatter = Plotly.d3.format('.3f')
   opp_qpct_formatter = exp_pts_formatter
 
+  vmax = Math.max(window.innerWidth, window.innerHeight)
+  sizeref = Math.min(Math.max(21 - (vmax / 50), 1), 11)
+
   data = '0123456'.split('').map (tca) ->
     dataset = rows.filter (row) -> row['TCA'] == tca
     {} =
@@ -51,6 +54,7 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
         opacity: 0.6
         sizemode: 'area'
         sizemin: 1.5
+        sizeref: sizeref
         color: dataset.map (row) -> tca_colors[row['TCA']]
         size: dataset.map (row) -> Math.pow(row['Matches'], 1.0)
 
