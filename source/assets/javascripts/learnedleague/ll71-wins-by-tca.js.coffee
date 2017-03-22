@@ -34,6 +34,9 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
   # console?.log("Loaded data: #{rows.length} rows")
   rows.map (row) -> (row['WinPct'] = row['Wins'] / row['Matches'])
 
+  vmax = Math.max(window.innerWidth, window.innerHeight)
+  sizeref = Math.min(Math.max(21 - (vmax / 50), 1), 11)
+
   data = '0123456'.split('').map (tca) ->
     dataset = rows.filter (row) -> row['TCA'] == tca
     {} =
@@ -56,6 +59,7 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
         opacity: 0.6
         sizemode: 'area'
         sizemin: 2
+        sizeref: sizeref
         color: dataset.map (row) -> tca_colors[row['TCA']]
         size: dataset.map (row) -> row['Matches']
 
@@ -64,6 +68,11 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
     paper_bgcolor: 'rgba(0, 0, 0, 0)'
     plot_bgcolor: 'rgba(0, 0, 0, 0)'
     hovermode: 'closest'
+    margin:
+      t: 75
+      b: 75
+      l: 75
+      r: 75
     xaxis:
       title: 'Rundle aggregate QPct'
       range: [0.25, 0.825]
