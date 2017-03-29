@@ -10,6 +10,7 @@ title: Total correct answers vs. defensive efficiency by level, LL71
 - content_for :footer do
   %script{ src: asset_path(:js, 'vendor/import') }
   :coffeescript
+    window.CSV_URL = 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.io/master/data/ll71-players.csv'
     $import(
       'https://cdn.plot.ly/plotly-latest.min.js',
-      () -> $import('#{asset_path(:js, "learnedleague/ll71-tca-vs-de")}'))
+      () -> $import('#{asset_path(:js, "learnedleague/tca-vs-de")}'))

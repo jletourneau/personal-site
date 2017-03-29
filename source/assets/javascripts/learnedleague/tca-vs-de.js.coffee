@@ -49,7 +49,7 @@ fuzz = (values, scale=0.5) ->
 join_2d = (aoa, joiner='<br>') ->
   aoa.map((a) -> a.join(joiner))
 
-Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.io/master/data/ll71-players.csv', (err, rows) ->
+window.CSV_URL && Plotly.d3.csv window.CSV_URL, (err, rows) ->
   console?.log("Loaded data: #{rows.length} rows")
 
   config =
@@ -95,7 +95,7 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
       yaxis: 'y1'
 
   layout =
-    title: 'Total correct answers vs. defensive efficiency by level, LL71'
+    title: document.getElementsByTagName('title')[0].innerHTML
     paper_bgcolor: 'rgba(0, 0, 0, 0)'
     plot_bgcolor: 'rgba(0, 0, 0, 0)'
     hovermode: 'closest'
