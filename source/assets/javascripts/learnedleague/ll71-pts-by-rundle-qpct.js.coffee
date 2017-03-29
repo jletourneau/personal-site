@@ -30,9 +30,10 @@ tca_colors =
   1: colors.pink
   0: colors.gray
 
-Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.io/master/data/ll71-wins-by-tca.csv', (err, rows) ->
+Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.io/master/data/ll71-record-by-rundle-qpct.csv', (err, rows) ->
   # console?.log("Loaded data: #{rows.length} rows")
-  rows.map (row) -> (row['WinPct'] = row['Wins'] / row['Matches'])
+  rows.map (row) ->
+    row['ExpPts'] = ((2 * row['W']) + (1 * row['T'])) / row['Matches']
 
   vmax = Math.max(window.innerWidth, window.innerHeight)
   sizeref = Math.min(Math.max(21 - (vmax / 50), 1), 11)
@@ -44,17 +45,16 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
       mode: 'markers'
       hoverinfo: 'text'
       x: dataset.map (row) -> row['RundleQPct']
-      y: dataset.map (row) -> row['WinPct']
+      y: dataset.map (row) -> row['ExpPts']
       text:
         dataset.map (row) ->
-          formatted_pct = String(100 * row['WinPct']).slice(0, 5)
+          formatted_pct = String(100 * row['ExpPts']).slice(0, 5)
           formatted_qpct = String(row['RundleQPct']).replace('0.', '.').slice(0, 4)
           "#{row['Rundle']}
             (#{formatted_qpct} QPct)
             <br>
             #{row['TCA']} TCA:
-            #{formatted_pct}% wins
-            (#{row['Wins']}/#{row['Matches']})"
+            #{row['W']} W, #{row['L']} L, #{row['T']} T"
       marker:
         opacity: 0.6
         sizemode: 'area'
@@ -75,16 +75,16 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
       r: 75
     xaxis:
       title: 'Rundle aggregate QPct'
-      range: [0.25, 0.825]
-      dtick: 0.1
+      range: [-0.02, 1.02]
+      dtick: 1 / 10
       tickformat: '.3f'
       gridcolor: 'rgba(0, 0, 0, 0.1)'
       zerolinecolor: 'rgba(0, 0, 0, 0.1)'
     yaxis:
-      title: 'Win percentage'
-      range: [-0.02, 1.02]
-      dtick: 0.25
-      tickformat: '.0%'
+      title: 'Avg. match points'
+      range: [-0.02, 2.02]
+      dtick: 1 / 4
+      tickformat: '.2f'
       gridcolor: 'rgba(0, 0, 0, 0.1)'
       zerolinecolor: 'rgba(0, 0, 0, 0.1)'
 

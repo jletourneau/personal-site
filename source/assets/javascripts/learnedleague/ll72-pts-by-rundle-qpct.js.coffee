@@ -1,3 +1,15 @@
+# This is a two-dimensional scatter plot, with each dot representing a unique
+# combination of a rundle R and a number N ranging from 0 to 6.
+#
+# The horizontal position of each dot indicates the aggregate QPct of all
+# players in rundle R (i.e. the "difficulty" of the rundle); the vertical
+# position of the dot indicates what percentage of the time a player in rundle
+# R who got N correct answers in a match won against their opponent.
+#
+# Dots are colorized according to the number of correct answers they represent;
+# the size of the dots indicates the number of times players in rundle R got N
+# correct answers.
+
 colors =
   gray: '#4D4D4D'
   blue: '#5DA5DA'
@@ -18,17 +30,10 @@ tca_colors =
   1: colors.pink
   0: colors.gray
 
-Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.io/master/data/ll71-record-by-opponent-qpct.csv', (err, rows) ->
-  console?.log("Loaded data: #{rows.length} rows")
+Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.io/master/data/ll72-record-by-rundle-qpct.csv', (err, rows) ->
+  # console?.log("Loaded data: #{rows.length} rows")
   rows.map (row) ->
-    row['W'] = parseInt(row['W'], 10)
-    row['L'] = parseInt(row['L'], 10)
-    row['T'] = parseInt(row['T'], 10)
-    row['Matches'] = parseInt(row['Matches'], 10)
     row['ExpPts'] = ((2 * row['W']) + (1 * row['T'])) / row['Matches']
-
-  exp_pts_formatter = Plotly.d3.format('.3f')
-  opp_qpct_formatter = exp_pts_formatter
 
   vmax = Math.max(window.innerWidth, window.innerHeight)
   sizeref = Math.min(Math.max(21 - (vmax / 50), 1), 11)
@@ -39,24 +44,24 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
       name: "#{tca} TCA"
       mode: 'markers'
       hoverinfo: 'text'
-      x: dataset.map (row) -> row['OpponentQPct']
+      x: dataset.map (row) -> row['RundleQPct']
       y: dataset.map (row) -> row['ExpPts']
       text:
         dataset.map (row) ->
-          formatted_exp_pts = exp_pts_formatter(row['ExpPts'])
-          opp_qpct = opp_qpct_formatter(row['OpponentQPct'])
-          "#{row['TCA']} TCA vs. #{opp_qpct} ±.005 QPct:
+          formatted_pct = String(100 * row['ExpPts']).slice(0, 5)
+          formatted_qpct = String(row['RundleQPct']).replace('0.', '.').slice(0, 4)
+          "#{row['Rundle']}
+            (#{formatted_qpct} QPct)
             <br>
-            #{formatted_exp_pts} avg. match points
-            <br>
-            (#{row['W']} W, #{row['T']} T, #{row['L']} L in #{row['Matches']} matches)"
+            #{row['TCA']} TCA:
+            #{row['W']} W, #{row['L']} L, #{row['T']} T"
       marker:
         opacity: 0.6
         sizemode: 'area'
-        sizemin: 1.5
+        sizemin: 2
         sizeref: sizeref
         color: dataset.map (row) -> tca_colors[row['TCA']]
-        size: dataset.map (row) -> Math.pow(row['Matches'], 1.0)
+        size: dataset.map (row) -> row['Matches']
 
   layout =
     title: document.getElementsByTagName('title')[0].innerHTML
@@ -69,7 +74,7 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
       l: 75
       r: 75
     xaxis:
-      title: 'Opponent QPct'
+      title: 'Rundle aggregate QPct'
       range: [-0.02, 1.02]
       dtick: 1 / 10
       tickformat: '.3f'

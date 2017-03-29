@@ -71,7 +71,6 @@ Plotly.d3.csv 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.
     xaxis:
       title: 'Opponent QPct'
       range: [-0.02, 1.02]
-      dtick: 0.1
       dtick: 1 / 10
       tickformat: '.3f'
       gridcolor: 'rgba(0, 0, 0, 0.1)'

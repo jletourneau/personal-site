@@ -1,0 +1,15 @@
+---
+title: Average match points by TCA vs. rundle QPct, LL71
+---
+
+.plotly-fullscreen{ id: 'plot_div' }
+  %span Loading…
+.back-fullscreen
+  = link_to '← Back', '/learnedleague/'
+
+- content_for :footer do
+  %script{ src: asset_path(:js, 'vendor/import') }
+  :coffeescript
+    $import(
+      'https://cdn.plot.ly/plotly-latest.min.js',
+      () -> $import('#{asset_path(:js, "learnedleague/ll71-pts-by-rundle-qpct")}'))
