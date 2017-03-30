@@ -28,8 +28,7 @@ window.CSV_URL && Plotly.d3.csv window.CSV_URL, (err, rows) ->
     row['Matches'] = parseInt(row['Matches'], 10)
     row['ExpPts'] = ((2 * row['W']) + (1 * row['T'])) / row['Matches']
 
-  exp_pts_formatter = Plotly.d3.format('.3f')
-  opp_qpct_formatter = exp_pts_formatter
+  exp_pts_formatter = opp_qpct_formatter = Plotly.d3.format('.3f')
 
   vmax = Math.max(window.innerWidth, window.innerHeight)
   sizeref = Math.min(Math.max(21 - (vmax / 50), 1), 11)
@@ -46,9 +45,9 @@ window.CSV_URL && Plotly.d3.csv window.CSV_URL, (err, rows) ->
         dataset.map (row) ->
           formatted_exp_pts = exp_pts_formatter(row['ExpPts'])
           opp_qpct = opp_qpct_formatter(row['OpponentQPct'])
-          "#{row['TCA']} TCA vs. #{opp_qpct} ±.005 QPct:
+          "Against #{opp_qpct} ±.005 QPct
             <br>
-            #{formatted_exp_pts} avg. match points
+            #{row['TCA']} TCA: #{formatted_exp_pts} avg. match points
             <br>
             (#{row['W']} W, #{row['T']} T, #{row['L']} L in #{row['Matches']} matches)"
       marker:

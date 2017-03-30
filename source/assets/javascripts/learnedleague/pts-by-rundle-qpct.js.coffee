@@ -34,7 +34,13 @@ window.CSV_URL && Plotly.d3.csv window.CSV_URL, (err, rows) ->
   console?.log("Loaded data: #{rows.length} rows")
 
   rows.map (row) ->
+    row['W'] = parseInt(row['W'], 10)
+    row['L'] = parseInt(row['L'], 10)
+    row['T'] = parseInt(row['T'], 10)
+    row['Matches'] = parseInt(row['Matches'], 10)
     row['ExpPts'] = ((2 * row['W']) + (1 * row['T'])) / row['Matches']
+
+  exp_pts_formatter = rundle_qpct_formatter = Plotly.d3.format('.3f')
 
   vmax = Math.max(window.innerWidth, window.innerHeight)
   sizeref = Math.min(Math.max(21 - (vmax / 50), 1), 11)
@@ -49,13 +55,13 @@ window.CSV_URL && Plotly.d3.csv window.CSV_URL, (err, rows) ->
       y: dataset.map (row) -> row['ExpPts']
       text:
         dataset.map (row) ->
-          formatted_pct = String(100 * row['ExpPts']).slice(0, 5)
-          formatted_qpct = String(row['RundleQPct']).replace('0.', '.').slice(0, 4)
-          "#{row['Rundle']}
-            (#{formatted_qpct} QPct)
+          formatted_exp_pts = exp_pts_formatter(row['ExpPts'])
+          formatted_qpct = rundle_qpct_formatter(row['RundleQPct'])
+          "#{row['Rundle']} (#{formatted_qpct} QPct)
             <br>
-            #{row['TCA']} TCA:
-            #{row['W']} W, #{row['L']} L, #{row['T']} T"
+            #{row['TCA']} TCA: #{formatted_exp_pts} avg. match points
+            <br>
+            (#{row['W']} W, #{row['T']} T, #{row['L']} L in #{row['Matches']} matches)"
       marker:
         opacity: 0.6
         sizemode: 'area'
@@ -77,6 +83,7 @@ window.CSV_URL && Plotly.d3.csv window.CSV_URL, (err, rows) ->
     xaxis:
       title: 'Rundle aggregate QPct'
       range: [-0.02, 1.02]
+      range: [0.25, 0.85]
       dtick: 1 / 10
       tickformat: '.3f'
       gridcolor: 'rgba(0, 0, 0, 0.1)'
