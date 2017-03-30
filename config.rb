@@ -71,9 +71,7 @@ configure :build do
 
   set :haml, ugly: true
 
-  activate :minify_css do |config|
-    config.inline = true
-  end
+  activate :minify_css
   activate :minify_javascript do |config|
     config.inline = true
   end
