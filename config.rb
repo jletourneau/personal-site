@@ -71,8 +71,12 @@ configure :build do
 
   set :haml, ugly: true
 
-  activate :minify_css
-  activate :minify_javascript
+  activate :minify_css do |config|
+    config.inline = true
+  end
+  activate :minify_javascript do |config|
+    config.inline = true
+  end
   activate :asset_hash
 
   # Only use asset host if environment variable is set (see Rakefile task).
