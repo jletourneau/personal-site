@@ -1,0 +1,16 @@
+---
+title: Average match points by TCA vs. opponent QPct, LL73
+---
+
+.plotly-fullscreen{ id: 'plot_div' }
+  %span Loading…
+.back-fullscreen
+  = link_to '← Back', '/learnedleague/'
+
+- content_for :footer do
+  %script{ src: asset_path(:js, 'vendor/import') }
+  :coffeescript
+    window.CSV_URL = 'https://raw.githubusercontent.com/jletourneau/jletourneau.github.io/master/data/ll73-record-by-opponent-qpct.csv'
+    $import(
+      'https://cdn.plot.ly/plotly-latest.min.js',
+      () -> $import('#{asset_path(:js, "learnedleague/pts-by-opponent-qpct")}'))
