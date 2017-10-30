@@ -82,7 +82,7 @@ configure :build do
   # use it when Netlify runs a plain vanilla "middleman build".
   if ENV['CLOUDFRONT']
     activate :asset_host
-    set :asset_host, '//d1msbq6ewzmie1.cloudfront.net'
+    set :asset_host, 'https://d1msbq6ewzmie1.cloudfront.net'
   end
 
   activate :minify_html do |html|
