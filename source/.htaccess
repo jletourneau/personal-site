@@ -14,6 +14,7 @@ AddOutputFilterByType DEFLATE \
   image/svg+xml
 
 Header add X-UA-Compatible "IE=edge"
+Header add X-Content-Type-Options "nosniff"
 
 ExpiresActive On
 ExpiresDefault "access plus 1 day"
