@@ -4,11 +4,10 @@
     %meta{ charset: 'utf-8' }
     %meta{ name: 'viewport', content: 'width=device-width,initial-scale=1,shrink-to-fit=no' }
     %title= current_page.data.title
+    %script document.documentElement.className=''
     %style= abovefold_styles(page_classes)
-    %noscript#deferred_css
-      %link{ rel: 'stylesheet', href: asset_path(:css, 'deferred') }
+    = partial 'deferred_stylesheet', locals: { stylesheet: 'deferred' }
     %link{ rel: 'shortcut icon', href: image_path('favicon.gif') }
   %body{ class: page_classes }
     = yield
     = yield_content :footer
-    %script= inline_javascript '_inject_deferred_css'

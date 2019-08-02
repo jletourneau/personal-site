@@ -1,0 +1,7 @@
+-# https://www.filamentgroup.com/lab/load-css-simpler/
+%link{ rel: 'stylesheet',
+       href: asset_path(:css, stylesheet),
+       media: 'print',
+       onload: 'this.media="all"' }
+%noscript
+  %link{ rel: 'stylesheet', href: asset_path(:css, stylesheet) }
