@@ -76,6 +76,7 @@ configure :build do
     config.inline = true
   end
   activate :asset_hash
+  activate :gzip
 
   # Only use asset host if environment variable is set (see Rakefile task).
   # Since this CloudFront distribution is pointed to Eris, we don't want to
