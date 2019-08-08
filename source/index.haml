@@ -6,7 +6,10 @@ title: Jack Letourneau
 
 %main.container
   .hello.noprint
-    .photo
+    %img{ src: image_path('jack@1x.jpg'),
+          srcset: "#{image_path('jack@2x.jpg')} 2x, #{image_path('jack@1x.jpg')} 1x",
+          alt: 'Photo of Jack',
+          class: 'photo' }
     %p Hello.
   %ul.accounts
     %li
